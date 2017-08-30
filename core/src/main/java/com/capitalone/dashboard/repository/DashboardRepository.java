@@ -18,6 +18,7 @@ public interface DashboardRepository extends PagingAndSortingRepository<Dashboar
 	List<Dashboard> findByOwner(String owner);
 	List<Dashboard> findByOwners(Owner owner);
 	List<Dashboard> findByTitle(String title);
+	Dashboard findByTitleAndType(String title, String type);
 
     List<Dashboard> findByApplicationComponentsIn(Collection<Component> components);
 
@@ -28,6 +29,7 @@ public interface DashboardRepository extends PagingAndSortingRepository<Dashboar
 	List<Dashboard> findProductDashboardsByTeamDashboardCollectorItemId(String teamDashboardCollectorItemId);
 
 	Iterable<Dashboard> findAllByConfigurationItemBusServObjectId(ObjectId appObjectId);
+	Iterable<Dashboard> findAllByConfigurationItemBusServObjectIdIn(Iterable<ObjectId> busServiceObjectIdList);
 	Iterable<Dashboard> findAllByConfigurationItemBusAppObjectId(ObjectId compObjectId);
 	Iterable<Dashboard> findAllByConfigurationItemBusServObjectIdAndConfigurationItemBusAppObjectId(ObjectId appObjectId, ObjectId compObjectId);
 

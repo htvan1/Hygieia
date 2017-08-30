@@ -49,7 +49,7 @@
 
                     </div>
                     <div class="col-sm-8 col-sm-pull-4">
-                        <div ng-show="ctrl.showAuthentication">
+                        <div ng-show="ctrl.showAuthentication" id="myDashboardsSection">
                             <div class="text-2x">My Dashboards <span class="label label-default"></span></div>
 
                             <div class="text-center" ng-hide="ctrl.mydash">Loading Your Dashboards...</div>
@@ -62,12 +62,12 @@
                                     <span class="pull-right">
 
 
-                                       <a href ng-click="ctrl.editDashboard(myitem)">
+                                       <a href ng-click="ctrl.editDashboard(myitem,'lg')">
                                            <span class="fa fa-lg fa-cog text-success"></span>
                                        </a>
 
-                                       <a href ng-click="ctrl.deleteDashboard(myitem)">
-                                           <span class="fa fa-lg fa-trash text-danger"></span>
+                                       <a href id="deleteDashboardButton" delete-confirm confirm-action="ctrl.deleteDashboard(myitem)">
+                                            <span class="fa fa-lg fa-trash text-danger"></span>
                                        </a>
                                     </span>
 
